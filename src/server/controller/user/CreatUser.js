@@ -1,6 +1,6 @@
 import { validation } from "../../shared/middlewares/index.js";
 import * as yup from "yup";
-import { UserProvider } from "./index.js";
+import { UserProvider } from "../../providers/user/index.js";
 import { StatusCodes } from "http-status-codes";
 
 export const creatUserValidation = validation((getSchema) => ({
@@ -31,6 +31,10 @@ export const creatUser = async (req, res) => {
     const result = await UserProvider.creatUser(req.body);
     res.status(StatusCodes.CREATED).send(result);
   } catch (error) {
-    res.status(StatusCodes.INTERNAL_SERVER_ERROR).send(error);
+    console.error(error); // Ajuda a debugar
+    res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
+      error: true,
+      message: error.message || "Erro interno no servidor",
+    });
   }
 };

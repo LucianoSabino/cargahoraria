@@ -1,5 +1,5 @@
 import * as creatuser from "./CreatUser.js";
 
-export const UserProvider = {
+export const UserController = {
   ...creatuser,
 };

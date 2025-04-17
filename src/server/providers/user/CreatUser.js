@@ -1,5 +1,5 @@
-import { CriptografiaSenha } from "../../shared/services/CriptografiaSenha";
-import prisma from "../database/prisma.js";
+import { CriptografiaSenha } from "../../shared/services/CriptografiaSenha.js";
+import prisma from "../../database/prisma.js";
 
 export const creatUser = async (data) => {
   try {
