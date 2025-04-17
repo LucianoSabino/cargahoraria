@@ -13,6 +13,7 @@ export const creatUserValidation = validation((getSchema) => ({
         .min(10)
         .max(10),
       membresia: yup.string().required("Membresia é obrigatória"),
+      curso: yup.string().required("Curso é obrigatório"),
       email: yup
         .string()
         .email("Email inválido")
