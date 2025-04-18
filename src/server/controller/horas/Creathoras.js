@@ -9,6 +9,7 @@ export const creatHorasValidation = validation((getSchema) => ({
       horas: yup.string().required("Horas é obrigatório"),
       horario: yup.string().required("Horário é obrigatório"),
       descricao: yup.string().required("Descrição é obrigatório"),
+      data: yup.string().required("Data é obrigatório"),
       userId: yup.string().required("UserId é obrigatório"),
     })
   ),
