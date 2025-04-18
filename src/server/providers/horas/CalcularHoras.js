@@ -1,47 +1,26 @@
 import prisma from "../../database/prisma.js";
 
-export const CalculatHoras = async (id, dataInicio, dataFim) => {
+export const buscarHoraData = async (id, dataInicio, dataFim) => {
   try {
-    // Verifique se o id é um número válido
-    const userId = Number(id);
-    if (isNaN(userId)) {
-      throw new Error("ID inválido");
-    }
-
-    // Cria o filtro base para o userId
-    const where = {
-      AND: [
-        {
-          userId: userId, // Filtro para o userId
-        },
-        // Adiciona o filtro de data apenas se dataInicio e dataFim forem fornecidos
-        dataInicio && dataFim
-          ? {
-              data: {
-                gte: new Date(dataInicio),
-                lte: new Date(dataFim),
-              },
-            }
-          : {},
-      ],
-    };
-
-    // Realiza a agregação para somar as horas com base no filtro
     const result = await prisma.horario.aggregate({
       _sum: {
         horas: true,
       },
-      where,
+      where: {
+        userId: Number(id),
+        data: {
+          gte: dataInicio,
+          lte: dataFim,
+        },
+      },
     });
 
-    // Retorna o resultado se houver soma de horas, caso contrário, retorna um erro
-    if (result._sum.horas != null) {
-      return result._sum.horas;
+    if (!result) {
+      throw new Error("Registro não encontrado");
     }
 
-    return new Error("Registro não encontrado!");
+    return result._sum.horas; // Retorna a soma das horas
   } catch (error) {
-    console.error("Erro Prisma:", error);
-    return new Error("Erro ao consultar o registro");
+    throw new Error("Erro ao buscar horário por data");
   }
 };
