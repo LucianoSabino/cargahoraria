@@ -4,6 +4,7 @@ import { StatusCodes } from "http-status-codes";
 export const calcularHora = async (req, res) => {
   try {
     const { id, dataInicio, dataFim } = req.query;
+    console.log("ID:", id);
     const result = await HorasProvider.CalculatHoras(id, dataInicio, dataFim);
     res.status(StatusCodes.CREATED).send(result);
   } catch (error) {

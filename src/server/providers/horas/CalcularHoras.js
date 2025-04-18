@@ -2,11 +2,17 @@ import prisma from "../../database/prisma.js";
 
 export const CalculatHoras = async (id, dataInicio, dataFim) => {
   try {
+    // Verifique se o id é um número válido
+    const userId = Number(id);
+    if (isNaN(userId)) {
+      throw new Error("ID inválido");
+    }
+
     // Cria o filtro base para o userId
     const where = {
       AND: [
         {
-          userId: Number(id), // Filtro para o userId
+          userId: userId, // Filtro para o userId
         },
         // Adiciona o filtro de data apenas se dataInicio e dataFim forem fornecidos
         dataInicio && dataFim
