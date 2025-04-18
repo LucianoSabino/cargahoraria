@@ -7,6 +7,11 @@ export const buscarUserHora = async (id) => {
         userId: Number(id),
       },
     });
+
+    if (!result) {
+      throw new Error("Registro não encontrado");
+    }
+
     return result;
   } catch (error) {
     throw new Error("Erro ao buscar horário por usuário");

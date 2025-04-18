@@ -10,6 +10,11 @@ export const buscarHoraData = async (dataInicio, dataFim) => {
         },
       },
     });
+
+    if (!result) {
+      throw new Error("Registro não encontrado");
+    }
+
     return result;
   } catch (error) {
     throw new Error("Erro ao buscar horário por data");

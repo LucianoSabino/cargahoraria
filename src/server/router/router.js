@@ -51,4 +51,7 @@ router.get("/horas/data", HorasController.creatHoraData);
 // Buscar horas por id usuario
 router.get("/horas/user/:id", HorasController.buscarHorasUser);
 
+// Calcular horas
+router.get("/horas/calcular", HorasController.calcularHora);
+
 export default router;
