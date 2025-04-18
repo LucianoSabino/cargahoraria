@@ -24,7 +24,7 @@ Gerencia e registra as horas de voluntários de forma eficiente.
 | DELETE | `/user/1`     | Deleta o usuario             | Retorna mensagem de sucesso                        |
 | POST   | `/user`       | Cria usuario                 | Retorna todas as informações do usuario            |
 | PUT    | `/user/1`     | Atualiza os dados do usuario | Retorna todas informações atualizada               |
-| POST   | `/user/login` | Faz o login no sistema       | Retorna um token com (uid,nome,matricula)          |
+| POST   | `/user/login` | Faz o login no sistema       | Retorna um token com (uid,nome,matricula, role)    |
 
 ### 🔹 **Exemplo de Requisição**
 

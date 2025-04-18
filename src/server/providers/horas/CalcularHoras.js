@@ -13,7 +13,7 @@ export const CalculatHoras = async (id, dataInicio, dataFim) => {
       };
     }
 
-    const result = await prisma.cargahoraria.aggregate({
+    const result = await prisma.horario.aggregate({
       _sum: {
         horas: true,
       },
