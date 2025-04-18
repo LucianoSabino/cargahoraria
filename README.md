@@ -1,6 +1,6 @@
 # 📅 cargahoraria
 
-![Imagem do Projeto](https://github.com/LucianoSabino/rotaApiRas/blob/master/img/rasfoto.jpeg?raw=true)
+![Imagem do Projeto](https://github.com/LucianoSabino/cargahoraria/blob/main/img/TrabalhandoRob%C3%B3ticaTecnologia.png?raw=true)
 
 **Sistema de ponto para a equipe de robótica.**  
 Gerencia e registra as horas de voluntários de forma eficiente.
