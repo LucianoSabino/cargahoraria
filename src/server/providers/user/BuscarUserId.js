@@ -12,7 +12,7 @@ export const buscaUserId = async ({ id }) => {
       throw new Error("Usuário não encontrado");
     }
 
-    const { password, ...restoDados } = result;
+    const { senha, ...restoDados } = result;
     return restoDados;
   } catch (error) {
     console.error("Erro ao buscar usuário:", error.message);

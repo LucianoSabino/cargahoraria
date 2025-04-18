@@ -28,4 +28,8 @@ router.post(
 
 // Buscar usuario por id
 router.get("/user/:id", UserController.buscaUserId);
+
+// Deletar usuario
+router.delete("/user/:id", UserController.deletaUser);
+
 export default router;
