@@ -32,4 +32,7 @@ router.get("/user/:id", UserController.buscaUserId);
 // Deletar usuario
 router.delete("/user/:id", UserController.deletaUser);
 
+// Atualizar usuario
+router.put("/user/:id", UserController.updateUser);
+
 export default router;
