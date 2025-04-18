@@ -48,4 +48,7 @@ router.post(
 // Buscar horas por data
 router.get("/horas/data", HorasController.creatHoraData);
 
+// Buscar horas por id usuario
+router.get("/horas/user/:id", HorasController.buscarHorasUser);
+
 export default router;
