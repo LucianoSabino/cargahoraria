@@ -4,7 +4,7 @@ export const buscarUserHora = async (id) => {
   try {
     const result = await prisma.horario.findMany({
       where: {
-        userI: Number(id),
+        userId: Number(id),
       },
     });
     return result;
