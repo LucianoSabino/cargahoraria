@@ -3,8 +3,7 @@ import { StatusCodes } from "http-status-codes";
 
 export const buscarHorasUser = async (req, res) => {
   try {
-    const { userId } = req.params;
-    const result = await HorasProvider.buscarUserHora(userId);
+    const result = await HorasProvider.buscarUserHora(req.params);
     res.status(StatusCodes.CREATED).send(result);
   } catch (error) {
     console.error(error);
