@@ -3,7 +3,7 @@ import { UserProvider } from "../../providers/user/index.js";
 
 export const deletaUser = async (req, res) => {
   try {
-    const result = await UserProvider.deletaUser(req.params);
+    const result = await UserProvider.deletaUser(req.params.id);
     if (!result) {
       return res.status(StatusCodes.NOT_FOUND).json({
         message: "Usuário não encontrado",
