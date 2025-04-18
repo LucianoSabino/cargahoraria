@@ -1,3 +1,5 @@
+import prisma from "../../database/prisma.js";
+
 export const deletaUser = async (id) => {
   try {
     await prisma.user.delete({
