@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { UserController } from "../controller/user/index.js";
+import { HorasController } from "../controller/horas/index.js";
 
 const router = Router();
 
@@ -35,4 +36,12 @@ router.delete("/user/:id", UserController.deletaUser);
 // Atualizar usuario
 router.put("/user/:id", UserController.updateUser);
 
+// Horas
+
+// Cadastrar horas
+router.post(
+  "/horas",
+  HorasController.creatHorasValidation,
+  HorasController.creatHoras
+);
 export default router;

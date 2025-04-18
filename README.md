@@ -7,44 +7,6 @@ Gerencia e registra as horas de voluntários de forma eficiente.
 
 ---
 
-## 🛆 Como rodar o projeto
-
-1. Certifique-se de ter o **Node.js** instalado (versão recomendada: LTS).
-   - Para verificar: `node -v && npm -v`
-2. Clone o repositório:
-   ```bash
-   git clone https://github.com/seu-repositorio.git
-   cd seu-repositorio
-   ```
-3. Crie um arquivo `.env` na raiz do projeto e copie o conteúdo de `.env.example`.
-4. Defina a variável `JWT_SECRET` com uma sequência aleatória de caracteres:
-
-   ```env
-   JWT_SECRET=kdksfksjfkgjgks
-   ```
-
-5. Defina a variável `BaseUrl` com link da conexão com o banco de dados postgres.
-
-6. Instale as dependências:
-   ```bash
-   npm install
-   ```
-7. Execute o projeto:
-   ```bash
-   npm run dev
-   ```
-
----
-
-1. Prisma
-
-- Comandos lib: `@prisma/cliant prisma`
-
-- Comando para iniciar o prisma: `npx prisma init`
-
-- Comando para gera a migração `npx prisma generate`
-  `npx prisma migrate dev --name init`
-
 ## 💻 Rotas da API
 
 ### 🔹 **Endpoints Teste**
@@ -76,24 +38,6 @@ Content-Type: application/json
     "matricula": "2020114916",
     "senha": "123"
 }
-
-```
-
----
-
-#### 📌 **Deletar um usuário**
-
-```json
-DELETE /user/1
-
-```
-
----
-
-#### 📌 **Buscar usuário**
-
-```json
-GET /user/1
 
 ```
 
@@ -132,3 +76,12 @@ Content-Type: application/json
 ```
 
 ---
+
+1. Prisma
+
+- Comandos lib: `@prisma/cliant prisma`
+
+- Comando para iniciar o prisma: `npx prisma init`
+
+- Comando para gera a migração `npx prisma generate`
+  `npx prisma migrate dev --name init`
