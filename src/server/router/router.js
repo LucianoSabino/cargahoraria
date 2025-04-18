@@ -17,7 +17,7 @@ router.post(
 );
 
 // Buscar usuario
-router.get("/user", UserController.buscarUser);
+router.get("/users", UserController.buscarUser);
 
 // Login usuario
 router.post(
@@ -25,4 +25,7 @@ router.post(
   UserController.loginUserValidation,
   UserController.loginUser
 );
+
+// Buscar usuario por id
+router.get("/user/:id", UserController.buscaUserId);
 export default router;
