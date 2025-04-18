@@ -55,34 +55,62 @@ Gerencia e registra as horas de voluntários de forma eficiente.
 
 ### 🔹 **Endpoints Usuario**
 
-| Método | Rota           | Descrição                                                  | Retorno                         |
-| ------ | -------------- | ---------------------------------------------------------- | ------------------------------- |
-| GET    | `/user`        | Busca todos os usuario                                     | Todas as informações do usuario |
-| GET    | `/user`        | Busca todos usuario.                                       |
-| GET    | `/horario`     | Busca os todas as informações horarios intervalo de tempo. |
-| GET    | `/calcular`    | Calcula o horario dos vonlurario.                          |
-| GET    | `/buscainfo`   | Busca todas as infomações do usuario.                      |
-| GET    | `/admin_busca` | Retorma asinformações da carga horaria do usuario.         |
-| POST   | `/user`        | Cria Usuario.                                              |
-| POST   | `/login`       | Faz login.                                                 |
-| POST   | `/upmembresia` | Atualiza informação de membresia do voluntario.            |
-| POST   | `/admin_role`  | Atualiza nivel de acesso do volutario                      |
+| Método | Rota          | Descrição                    | Retorno                                            |
+| ------ | ------------- | ---------------------------- | -------------------------------------------------- |
+| GET    | `/users`      | Busca todos os usuario       | Retorna o id, nome matricula, membresia do usuario |
+| GET    | `/user/1`     | Busca um usuario espercifico | Retorna todas as infornações                       |
+| DELETE | `/user/1`     | Deleta o usuario             | Retorna mensagem de sucesso                        |
+| POST   | `/user`       | Cria usuario                 | Retorna todas as informações do usuario            |
+| PUT    | `/user/1`     | Atualiza os dados do usuario | Retorna todas informações atualizada               |
+| POST   | `/user/login` | Faz o login no sistema       | Retorna um token com (uid,nome,matricula)          |
 
-### 🔹 **Exemplo de Requisição e Resposta**
+### 🔹 **Exemplo de Requisição**
 
-#### 📌 **Criar um usuário**
-
-**Requisição:**
+#### 📌 **Login**
 
 ```json
-POST /usuario
+POST /user/login
 Content-Type: application/json
 
 {
-    "nome": "test2",
-    "matricula": "2020114915",
-    "membresia": "1010/Off",
-    "email": "test2@gmail.com",
+    "matricula": "2020114916",
+    "senha": "123"
+}
+
+```
+
+---
+
+#### 📌 **Deletar um usuário**
+
+```json
+DELETE /user/1
+
+```
+
+---
+
+#### 📌 **Buscar usuário**
+
+```json
+GET /user/1
+
+```
+
+---
+
+#### 📌 **Criar um usuário**
+
+```json
+POST /user
+Content-Type: application/json
+
+{
+    "nome": "test",
+    "matricula": "1010101010",
+    "membresia": "101010/Off",
+    "curso": "BCET",
+    "email": "test@gmail.com",
     "senha": "123",
     "telefone": "0800-0000",
     "role": "user",
@@ -91,11 +119,15 @@ Content-Type: application/json
 }
 ```
 
-**Resposta (201 - Created):**
+---
+
+#### 📌 **Atualizar dados**
 
 ```json
+PUT /user/1
+Content-Type: application/json
 {
-  "id": 1
+    "nome": "Ras"
 }
 ```
 
