@@ -23,37 +23,42 @@ Gerencia e registra as horas de voluntários de forma eficiente.
    JWT_SECRET=kdksfksjfkgjgks
    ```
 
-   - **Dica:** Gere uma chave segura com o comando:
-     ```bash
-     openssl rand -base64 32
-     ```
+5. Defina a variável `BaseUrl` com link da conexão com o banco de dados postgres.
 
-5. Instale as dependências:
+6. Instale as dependências:
    ```bash
    npm install
    ```
-6. Execute o projeto:
+7. Execute o projeto:
    ```bash
    npm run dev
    ```
 
 ---
 
-- Comandos prisma
-  lib: `@prisma/cliant prisma`
-  Comando para iniciar o prisma: `npx prisma init`
+1. Prisma
 
-  `npx prisma generate`
+- Comandos lib: `@prisma/cliant prisma`
+
+- Comando para iniciar o prisma: `npx prisma init`
+
+- Comando para gera a migração `npx prisma generate`
   `npx prisma migrate dev --name init`
 
 ## 💻 Rotas da API
 
-### 🔹 **Endpoints**
+### 🔹 **Endpoints Teste**
 
-| Método | Rota           | Descrição                                                  |
-| ------ | -------------- | ---------------------------------------------------------- |
-| GET    | `/`            | Rota de teste.                                             |
-| GET    | `/user`        | Busca usuario.                                             |
+| Método | Rota | Descrição     | Retorno             |
+| ------ | ---- | ------------- | ------------------- |
+| GET    | `/`  | Rota de teste | Mensagem de sucesso |
+
+### 🔹 **Endpoints Usuario**
+
+| Método | Rota           | Descrição                                                  | Retorno                         |
+| ------ | -------------- | ---------------------------------------------------------- | ------------------------------- |
+| GET    | `/user`        | Busca todos os usuario                                     | Todas as informações do usuario |
+| GET    | `/user`        | Busca todos usuario.                                       |
 | GET    | `/horario`     | Busca os todas as informações horarios intervalo de tempo. |
 | GET    | `/calcular`    | Calcula o horario dos vonlurario.                          |
 | GET    | `/buscainfo`   | Busca todas as infomações do usuario.                      |
