@@ -2,6 +2,7 @@ import { validation } from "../../shared/middlewares/index.js";
 import * as yup from "yup";
 import { UserProvider } from "../../providers/user/index.js";
 import { StatusCodes } from "http-status-codes";
+import { JWTService } from "../../shared/services/JWT.js";
 
 export const loginUserValidation = validation((getSchema) => ({
   body: getSchema(
@@ -19,7 +20,33 @@ export const loginUserValidation = validation((getSchema) => ({
 export const loginUser = async (req, res) => {
   try {
     const result = await UserProvider.loginUser(req.body);
-    res.status(StatusCodes.CREATED).send(result);
+
+    if (!result) {
+      res.status(StatusCodes.UNAUTHORIZED).json({
+        errors: {
+          default: "Usuário ou senha inválidos",
+        },
+      });
+      return;
+    }
+
+    const accessToken = JWTService.sign({
+      uid: result.id,
+      nome: result.nome,
+      matricula: result.matricula,
+      role: result.role,
+    });
+
+    if (accessToken === "JWT_SECRET_NOT_FOUND") {
+      res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
+        errors: {
+          default: "Erro ao gerar o Token de acesso!",
+        },
+      });
+      return;
+    }
+
+    res.status(StatusCodes.OK).json({ accessToken });
   } catch (error) {
     console.error(error);
     res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({
