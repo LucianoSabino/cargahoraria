@@ -30,6 +30,7 @@ model User {
   updatedAt DateTime @updatedAt
 
   horarios Horario[] // <- Um usuário pode ter vários horários
+  agendas Agenda[] // <- Um usuário pode ter várias agendas
 }
 
 model Horario {
@@ -44,3 +45,20 @@ model Horario {
   userId Int // <- Chave estrangeira
   user User @relation(fields: [userId], references: [id]) // Relacionamento com a tabela User
 }
+
+model Agenda {
+  id Int @id @default(autoincrement())
+  nomeEvento String
+  descricao String
+  horas Float
+  data String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  userId Int // <- Chave estrangeira
+  user User @relation(fields: [userId], references: [id]) // Relacionamento com a tabela User
+}
+
+// model Planotrabalho {
+
+// }
