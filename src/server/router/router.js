@@ -47,10 +47,10 @@ router.post(
 );
 
 // Buscar horas por data
-router.get("/horas/data", HorasController.creatHoraData);
+router.get("/horas/data", HorasController.buscarHoraData);
 
 // Buscar horas por id usuario
-router.get("/horas/user/:id", HorasController.buscarHorasUser);
+router.get("/horas/user/:id", HorasController.buscarUserHora);
 
 // Calcular horas
 router.get("/horas/calcular", HorasController.calcularHora);

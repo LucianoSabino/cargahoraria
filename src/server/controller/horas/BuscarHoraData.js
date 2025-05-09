@@ -1,7 +1,7 @@
 import { HorasProvider } from "../../providers/horas/index.js";
 import { StatusCodes } from "http-status-codes";
 
-export const creatHoraData = async (req, res) => {
+export const buscarHoraData = async (req, res) => {
   try {
     const { dataInicio, dataFim } = req.query;
     const result = await HorasProvider.buscarHoraData(dataInicio, dataFim);

@@ -1,6 +1,6 @@
 import prisma from "../../database/prisma.js";
 
-export const buscarHoraData = async (id, dataInicio, dataFim) => {
+export const calcularHoraData = async (id, dataInicio, dataFim) => {
   try {
     const result = await prisma.horario.aggregate({
       _sum: {

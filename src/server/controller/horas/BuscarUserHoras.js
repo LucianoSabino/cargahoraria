@@ -1,7 +1,7 @@
 import { HorasProvider } from "../../providers/horas/index.js";
 import { StatusCodes } from "http-status-codes";
 
-export const buscarHorasUser = async (req, res) => {
+export const buscarUserHora = async (req, res) => {
   try {
     const result = await HorasProvider.buscarUserHora(req.params.id);
     res.status(StatusCodes.CREATED).send(result);
