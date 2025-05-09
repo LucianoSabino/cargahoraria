@@ -57,6 +57,6 @@ router.get("/horas/calcular", HorasController.calcularHora);
 
 // Adimin
 // Relatorio de membros
-router.get("admin/relatorio/membros", AdminController.relatorioMembros);
+router.get("/admin/relatorio/membros", AdminController.relatorioMembros);
 
 export default router;
