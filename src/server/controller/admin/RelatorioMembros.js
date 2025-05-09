@@ -1,5 +1,5 @@
 import { StatusCodes } from "http-status-codes";
-import { AdminProvider } from "../../providers/admin/RelatorioMembros.js";
+import { AdminProvider } from "../../providers/admin/index.js";
 
 export const relatorioMembros = async (req, res) => {
   try {
