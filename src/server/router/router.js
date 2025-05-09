@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { UserController } from "../controller/user/index.js";
 import { HorasController } from "../controller/horas/index.js";
+import { AdminController } from "../controller/admin/index.js";
 
 const router = Router();
 
@@ -53,5 +54,9 @@ router.get("/horas/user/:id", HorasController.buscarHorasUser);
 
 // Calcular horas
 router.get("/horas/calcular", HorasController.calcularHora);
+
+// Adimin
+// Relatorio de membros
+router.get("admin/relatorio/membros", AdminController.relatorioMembros);
 
 export default router;

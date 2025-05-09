@@ -1,7 +1,7 @@
 import { StatusCodes } from "http-status-codes";
 import { AdminProvider } from "../../providers/admin/RelatorioMembros.js";
 
-export const buscarUser = async (req, res) => {
+export const relatorioMembros = async (req, res) => {
   try {
     const result = await AdminProvider.relatorioMembros();
     res.status(StatusCodes.OK).send(result);
