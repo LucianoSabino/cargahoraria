@@ -14,6 +14,7 @@ export const buscarUserHora = async (id) => {
 
     return result;
   } catch (error) {
+    console.error("Erro ao buscar hora id", error);
     throw new Error("Erro ao buscar horário por usuário");
   }
 };

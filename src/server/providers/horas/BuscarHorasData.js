@@ -17,6 +17,7 @@ export const buscarHoraData = async (dataInicio, dataFim) => {
 
     return result;
   } catch (error) {
+    console.error("Erro ao buscar horário por data:", error);
     throw new Error("Erro ao buscar horário por data");
   }
 };

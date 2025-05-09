@@ -18,9 +18,10 @@ export const buscarHoraData = async (id, dataInicio, dataFim) => {
     if (!result) {
       throw new Error("Registro não encontrado");
     }
-    // const horas = result._sum.horas || 0;
-    return result;
+
+    return result._sum.horas; // Retorna a soma das horas
   } catch (error) {
+    console.error("Erro ao calcular hora", error);
     throw new Error("Erro ao buscar horário por data");
   }
 };
