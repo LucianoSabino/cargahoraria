@@ -53,7 +53,7 @@ export const gerarRelatorioMembros = async () => {
               new Paragraph({
                 children: [
                   new TextRun({
-                    text: "Documento gerado pelo sistema da RAS IEEE UFRB.",
+                    text: "Documento gerado pelo sistema de ponto RAS IEEE UFRB.",
                     italics: true,
                   }),
                 ],
