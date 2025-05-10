@@ -32,25 +32,32 @@ export const gerarRelatorioMembros = async () => {
               new Paragraph({
                 children: [
                   new TextRun({
-                    text: "Relatorio de todos os menbros!.",
+                    text: "Relatório de todos os membros!",
                     bold: true,
+                    size: 28,
                   }),
-                  new TextRun(
-                    resultado
-                      .map(
-                        (item) =>
-                          `\nNome: ${item.nome}\nData: ${item.data}\nDescrição: ${item.descricao}`
-                      )
-                      .join("\n")
-                  ),
                 ],
+                spacing: { after: 300 },
               }),
+              ...resultado.map(
+                (item) =>
+                  new Paragraph({
+                    children: [
+                      new TextRun({ text: `Nome: ${item.nome}`, bold: true }),
+                      new TextRun({ text: `\nData: ${item.data}` }),
+                      new TextRun({ text: `\nDescrição: ${item.descricao}` }),
+                    ],
+                    spacing: { after: 200 },
+                  })
+              ),
               new Paragraph({
                 children: [
-                  new TextRun(
-                    "Documento gerado pelo sintema da RAS IEEE UFRB!."
-                  ),
+                  new TextRun({
+                    text: "Documento gerado pelo sistema da RAS IEEE UFRB.",
+                    italics: true,
+                  }),
                 ],
+                spacing: { before: 400 },
               }),
             ],
           },
