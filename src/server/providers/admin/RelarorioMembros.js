@@ -5,6 +5,7 @@ export const relatorioMembros = async () => {
     const horarios = await prisma.horario.findMany({
       select: {
         descricao: true,
+        data: true,
         user: {
           select: {
             nome: true,
@@ -15,6 +16,7 @@ export const relatorioMembros = async () => {
 
     const resultado = horarios.map((item) => ({
       nome: item.user.nome,
+      data: item.data,
       descricao: item.descricao,
     }));
 

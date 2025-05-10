@@ -17,14 +17,15 @@ Gerencia e registra as horas de voluntários de forma eficiente.
 
 ### 🔹 **Endpoints Usuario**
 
-| Método | Rota          | Descrição                    | Retorno                                            |
-| ------ | ------------- | ---------------------------- | -------------------------------------------------- |
-| GET    | `/users`      | Busca todos os usuario       | Retorna o id, nome matricula, membresia do usuario |
-| GET    | `/user/1`     | Busca um usuario espercifico | Retorna todas as infornações                       |
-| DELETE | `/user/1`     | Deleta o usuario             | Retorna mensagem de sucesso                        |
-| POST   | `/user`       | Cria usuario                 | Retorna todas as informações do usuario            |
-| PUT    | `/user/1`     | Atualiza os dados do usuario | Retorna todas informações atualizada               |
-| POST   | `/user/login` | Faz o login no sistema       | Retorna um token com (uid,nome,matricula, role)    |
+| Método | Rota                       | Descrição                                  | Retorno                                            |
+| ------ | -------------------------- | ------------------------------------------ | -------------------------------------------------- |
+| GET    | `/users`                   | Busca todos os usuario                     | Retorna o id, nome matricula, membresia do usuario |
+| GET    | `/user/1`                  | Busca um usuario espercifico               | Retorna todas as infornações                       |
+| DELETE | `/user/1`                  | Deleta o usuario                           | Retorna mensagem de sucesso                        |
+| POST   | `/user`                    | Cria usuario                               | Retorna todas as informações do usuario            |
+| PUT    | `/user/1`                  | Atualiza os dados do usuario               | Retorna todas informações atualizada               |
+| POST   | `/user/login`              | Faz o login no sistema                     | Retorna um token com (uid,nome,matricula, role)    |
+| GET    | `/admin/relatorio/membros` | Mostra o relario geral de todos os membros | Retorna um json                                    |
 
 ### 🔹 **Exemplo de Requisição**
 
