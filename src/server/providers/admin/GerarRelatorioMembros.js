@@ -1,9 +1,7 @@
 // Gerar documento word
 
 import prisma from "../../database/prisma.js";
-import docx from "docx";
-
-const { Document, Packer, Paragraph, TextRun } = docx;
+import { Document, Packer, Paragraph, TextRun } from "docx";
 
 export const gerarRelatorioMembros = async () => {
   try {
