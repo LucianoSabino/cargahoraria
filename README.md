@@ -28,8 +28,9 @@ Gerencia e registra as horas de voluntários de forma eficiente.
 | GET    | `/admin/relatorio/membros` | Mostra o relario geral de todos os membros              | Retorna um json                                    |
 | GET    | `/admin/gerar/relatorio`   | Gera um arquivo word com relatorio de todos os usuarios | Retorna um arquivo                                 |
 | POST   | `/agenda/admin`            | Cadastra evendo na agenda                               | Retorna o evento cadastrado                        |
-| DELETE | `/agenda/admin/:id`        | Deleta um evento                                        | Retorna uma mensagen                               |
+| DELETE | `/agenda/admin/delete/:id` | Deleta um evento                                        | Retorna uma mensagen                               |
 | GET    | `/lista/agenda`            | Lista todos os eventos                                  | Retorna um json                                    |
+| PUT    | `/agenda/admin/update/:id` | Atualiza dados do evento                                | Retorna uma mensagem                               |
 
 ### 🔹 **Exemplo de Requisição**
 
