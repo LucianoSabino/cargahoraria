@@ -86,5 +86,6 @@ Content-Type: application/json
 
 - Comando para iniciar o prisma: `npx prisma init`
 
-- Comando para gera a migração `npx prisma generate`
-  `npx prisma migrate dev --name init`
+- Comando para gera a migração: `npx prisma generate`
+
+- Comando para quando ouver uma alteração no banco: `npx prisma migrate dev --name init`

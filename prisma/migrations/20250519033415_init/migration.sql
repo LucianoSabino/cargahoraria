@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "Agenda" ALTER COLUMN "horas" SET DATA TYPE TEXT;
