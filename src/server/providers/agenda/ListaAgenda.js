@@ -5,6 +5,7 @@ export const listaAgenda = async () => {
     const result = await prisma.agenda.findMany();
     return result;
   } catch (error) {
+    console.error("Erro ao buscar eventos:", error.message);
     throw new Error("Erro ao buscar eventos");
   }
 };
