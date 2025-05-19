@@ -1,5 +1,5 @@
 import { StatusCodes } from "http-status-codes";
-import { AgendaProvider } from "../../providers/agenda/index";
+import { AgendaProvider } from "../../providers/agenda/index.js";
 
 export const updateAgenda = async (req, res) => {
   try {
