@@ -2,6 +2,7 @@ import { Router } from "express";
 import { UserController } from "../controller/user/index.js";
 import { HorasController } from "../controller/horas/index.js";
 import { AdminController } from "../controller/admin/index.js";
+import { AgendaController } from "../controller/agenda/index.js";
 
 const router = Router();
 
@@ -61,5 +62,12 @@ router.get("/admin/relatorio/membros", AdminController.relatorioMembros);
 
 // Relatorio
 router.get("/admin/gerar/relatorio", AdminController.GerarRelatorioMembros);
+
+// Agenda
+router.post(
+  "/agenda/admim",
+  AgendaController.creatAgendaValidation,
+  AgendaController.creatAgenda
+);
 
 export default router;
