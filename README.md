@@ -27,7 +27,7 @@ Gerencia e registra as horas de voluntários de forma eficiente.
 | POST   | `/user/login`              | Faz o login no sistema                                  | Retorna um token com (uid,nome,matricula, role)    |
 | GET    | `/admin/relatorio/membros` | Mostra o relario geral de todos os membros              | Retorna um json                                    |
 | GET    | `/admin/gerar/relatorio`   | Gera um arquivo word com relatorio de todos os usuarios | Retorna um arquivo                                 |
-| POST   | `/agenda/admim`            | Cadastra evendo na agenda                               | Retorna uma mensagem                               |
+| POST   | `/agenda/admin`            | Cadastra evendo na agenda                               | Retorna uma mensagem                               |
 
 ### 🔹 **Exemplo de Requisição**
 

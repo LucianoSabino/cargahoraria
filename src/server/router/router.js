@@ -65,7 +65,7 @@ router.get("/admin/gerar/relatorio", AdminController.GerarRelatorioMembros);
 
 // Agenda
 router.post(
-  "/agenda/admim",
+  "/agenda/admin",
   AgendaController.creatAgendaValidation,
   AgendaController.creatAgenda
 );

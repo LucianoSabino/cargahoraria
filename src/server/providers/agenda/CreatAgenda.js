@@ -7,6 +7,7 @@ export const creatAgenda = async (data) => {
     });
     return result;
   } catch (error) {
-    throw new Error("Erro ao criar usuário");
+    console.error(error);
+    throw new Error("Erro ao criar agenda");
   }
 };
