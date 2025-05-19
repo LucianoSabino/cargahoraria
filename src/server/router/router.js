@@ -64,10 +64,15 @@ router.get("/admin/relatorio/membros", AdminController.relatorioMembros);
 router.get("/admin/gerar/relatorio", AdminController.GerarRelatorioMembros);
 
 // Agenda
+
+// Cadastrar um evento
 router.post(
   "/agenda/admin",
   AgendaController.creatAgendaValidation,
   AgendaController.creatAgenda
 );
+
+// Deletar um evento
+router.delete("/agenda/admin/:id", AgendaController.deletaAgenda);
 
 export default router;
