@@ -7,9 +7,9 @@ export const deletaAgenda = async (id) => {
         id: Number(id),
       },
     });
-    return { message: "Agenda deletada com sucesso" };
+    return { message: "Evento deletado com sucesso" };
   } catch (error) {
-    console.error("Erro ao deletar agenda:", error.message);
+    console.error("Erro ao deletar evento:", error.message);
     throw error;
   }
 };

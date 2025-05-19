@@ -75,4 +75,7 @@ router.post(
 // Deletar um evento
 router.delete("/agenda/admin/:id", AgendaController.deletaAgenda);
 
+// Lista todos os eventos
+router.get("/lista/agenda", AgendaController.listeAgenda);
+
 export default router;
