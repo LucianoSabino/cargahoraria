@@ -30,7 +30,7 @@ Gerencia e registra as horas de voluntários de forma eficiente.
 | POST   | `/agenda/admin`            | Cadastra evendo na agenda                               | Retorna o evento cadastrado                        |
 | DELETE | `/agenda/admin/delete/:id` | Deleta um evento                                        | Retorna uma mensagen                               |
 | GET    | `/lista/agenda`            | Lista todos os eventos                                  | Retorna um json                                    |
-| PUT    | `/agenda/admin/update/:id` | Atualiza dados do evento                                | Retorna uma mensagem                               |
+| PUT    | `/agenda/admin/update/:id` | Atualiza dados do evento                                | Retorna um json com os datos atualizados           |
 
 ### 🔹 **Exemplo de Requisição**
 
