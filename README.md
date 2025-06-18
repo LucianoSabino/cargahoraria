@@ -15,22 +15,51 @@ Gerencia e registra as horas de voluntários de forma eficiente.
 | ------ | ---- | ------------- | ------------------- |
 | GET    | `/`  | Rota de teste | Mensagem de sucesso |
 
+---
+
 ### 🔹 **Endpoints Usuario**
 
-| Método | Rota                       | Descrição                                               | Retorno                                            |
-| ------ | -------------------------- | ------------------------------------------------------- | -------------------------------------------------- |
-| GET    | `/users`                   | Busca todos os usuario                                  | Retorna o id, nome matricula, membresia do usuario |
-| GET    | `/user/1`                  | Busca um usuario espercifico                            | Retorna todas as infornações                       |
-| DELETE | `/user/1`                  | Deleta o usuario                                        | Retorna mensagem de sucesso                        |
-| POST   | `/user`                    | Cria usuario                                            | Retorna todas as informações do usuario            |
-| PUT    | `/user/1`                  | Atualiza os dados do usuario                            | Retorna todas informações atualizada               |
-| POST   | `/user/login`              | Faz o login no sistema                                  | Retorna um token com (uid,nome,matricula, role)    |
-| GET    | `/admin/relatorio/membros` | Mostra o relario geral de todos os membros              | Retorna um json                                    |
-| GET    | `/admin/gerar/relatorio`   | Gera um arquivo word com relatorio de todos os usuarios | Retorna um arquivo                                 |
-| POST   | `/agenda/admin`            | Cadastra evendo na agenda                               | Retorna o evento cadastrado                        |
-| DELETE | `/agenda/admin/delete/:id` | Deleta um evento                                        | Retorna uma mensagen                               |
-| GET    | `/lista/agenda`            | Lista todos os eventos                                  | Retorna um json                                    |
-| PUT    | `/agenda/admin/update/:id` | Atualiza dados do evento                                | Retorna um json com os datos atualizados           |
+| Método | Rota          | Descrição                    | Retorno                                            |
+| ------ | ------------- | ---------------------------- | -------------------------------------------------- |
+| GET    | `/users`      | Busca todos os usuario       | Retorna o id, nome matricula, membresia do usuario |
+| GET    | `/user/1`     | Busca um usuario espercifico | Retorna todas as infornações                       |
+| DELETE | `/user/1`     | Deleta o usuario             | Retorna mensagem de sucesso                        |
+| POST   | `/user`       | Cria usuario                 | Retorna todas as informações do usuario            |
+| PUT    | `/user/1`     | Atualiza os dados do usuario | Retorna todas informações atualizada               |
+| POST   | `/user/login` | Faz o login no sistema       | Retorna um token com (uid,nome,matricula, role)    |
+
+---
+
+### 🔹 **Endpoints Admin**
+
+| Método | Rota                       | Descrição                                               | Retorno                     |
+| ------ | -------------------------- | ------------------------------------------------------- | --------------------------- |
+| GET    | `/admin/relatorio/membros` | Mostra o relario geral de todos os membros              | Retorna um json             |
+| GET    | `/admin/gerar/relatorio`   | Gera um arquivo word com relatorio de todos os usuarios | Retorna um arquivo          |
+| POST   | `/agenda/admin`            | Cadastra evendo na agenda                               | Retorna o evento cadastrado |
+
+---
+
+### 🔹 **Endpoints Agenda**
+
+| Método | Rota                       | Descrição                | Retorno                                  |
+| ------ | -------------------------- | ------------------------ | ---------------------------------------- |
+| GET    | `/lista/agenda`            | Lista todos os eventos   | Retorna um json                          |
+| PUT    | `/agenda/admin/update/:id` | Atualiza dados do evento | Retorna um json com os datos atualizados |
+| DELETE | `/agenda/admin/delete/:id` | Deleta um evento         | Retorna uma mensagen                     |
+
+---
+
+### 🔹 **Endpoints Plano de Trabalho**
+
+| Método | Rota                      | Descrição                                 | Retorno                                  |
+| ------ | ------------------------- | ----------------------------------------- | ---------------------------------------- |
+| GET    | `/user/planotrabalho/:id` | Lista todo o plano de trabalho do usuario | Retorna um json                          |
+| POST   | `/user/planotrabalho`     | Cria o plano de trabalho                  | Retorna todas as informações             |
+| PUT    | `/user/planotrabalho/:id` | Atualiza dados do evento                  | Retorna um json com os datos atualizados |
+| DELETE | `/user/planotrabalho/:id` | Deleta o plano de trabalho                | Retorna uma mensagen                     |
+
+---
 
 ### 🔹 **Exemplo de Requisição**
 
@@ -83,12 +112,18 @@ Content-Type: application/json
 
 ---
 
-1. Prisma
+#### 📌 **Agenda**
 
-- Comandos lib: `@prisma/cliant prisma`
+```json
+POST /agenda/admin
+Content-Type: application/json
 
-- Comando para iniciar o prisma: `npx prisma init`
+{
+    "nomeEvento": "Reunião de equipe",
+    "horas": "2",
+    "descricao": "Reunião para discutir o andamento do projeto",
+    "data": "2025-05-10"
+}
+```
 
-- Comando para gera a migração: `npx prisma generate`
-
-- Comando para quando ouver uma alteração no banco: `npx prisma migrate dev --name init`
+---
